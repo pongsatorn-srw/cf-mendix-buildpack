@@ -48,6 +48,7 @@ def build_from_source(
         os.path.join(mono_location, "etc/mono/config"),
         os.path.join(mxbuild_location, "modeler/mxbuild.exe"),
         "--target=package",
+        "--model-version=os.environ.get("MX_MODEL_VERSION")",
         "--output=/tmp/model.mda",
         f"--java-home={jdk_location}",
         f"--java-exe-path={os.path.join(jdk_location, 'bin/java')}",
